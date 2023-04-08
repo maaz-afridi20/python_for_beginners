@@ -1,0 +1,806 @@
+number = input("Enter your number\n")
+number2 = input("Enter your number 2\n")
+number3 = input("Enter your number 3\n")
+
+number = int(number)
+number2 = int(number2)
+number3 = int(number3)
+
+if (number > number2) & (number > number3):
+    print(number, " is the greatest \n")
+elif (number2 > number) & (number2 > number3):
+    print(number2, " is the greatest \n")
+elif number == number2 == number3:
+    print("All are equal")
+else:
+    print(number3, " is the greatest \n")
+--------------------------------------------------------------
+#
+# num = input("Enter letter")
+# ll = ['a', 'b', 'z', 'ew']
+# if num in ll[0]:
+#     print("your value is present")
+# else:
+#     print("Not present")
+--------------------------------------------------------------
+
+# tup = (1, 42, 5, 100)
+# if 1 in tup:
+#     print("number is present ")
+# else:
+#     print("not present")
+---------------------------------------------------------------
+# num = input("Enter price")
+# num = int(num)
+#
+# fruitPrice = {"apple": 10, "banana": 20, "carrot": 30}
+# if fruitPrice["banana"] == num:
+#     print("yes")
+# else:
+#     print("no")
+
+#
+# dd = {'k1': 10, 'k2': 20, 'k3': 30}
+# if dd['k1'] == 10:
+#     print(dd)
+#
+# if dd['k2'] == 20:
+#     dd['k2'] = 200
+#     print(dd)
+---------------------------------------------------------------
+LOOPING :
+
+num = input("Enter number")
+num = int(num)
+i = 1
+while i <= 10:
+    print(num, " * ", i, " = ", num*i)
+    i += 1
+
+ll = [12, 43, 342, 00, 58]
+i = 0
+while i < len(ll):
+    ll[0] = ll[0] + 8
+    i = i+1
+    print(ll)
+
+---------------------------------------------------------------
+FOOR LOOP :
+
+ll = ['banana', 'apple', 'cat']
+for x in ll:
+    print(x)
+
+
+l2 = ['orange', 'green', 'yellow']
+l3 = ['book', 'chair', 'laptop']
+
+for i in l2:
+    for j in l3:
+        print(i,j)
+----------------------------------------------------------------
+
+METHODS:
+
+def salam():
+    print("salam pakistan")
+
+
+salam()
+
+
+def bilal(nickname):
+    return nickname
+
+
+print(bilal("choopan"))
+
+
+def oddEven(number):
+    if number % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
+
+
+oddEven(135792)
+
+square = lambda x: x * x
+print(square(3))
+
+ll = [12, 88, 938, 78, 38, 13, 8, 99, 199]
+final_list = list(filter(lambda x: (x % 2 == 0), ll))
+print(final_list)
+
+
+l3 = [12, 88, 938, 78, 38, 13, 8, 99]
+newFinalList = list(map(lambda x: (x * 2), l3))
+print(newFinalList)
+----------------------------------------------------------------
+
+
+OBJECT AND CLASSES 
+
+class Phone:
+    def setColor(self, color):
+        self.color = color
+
+    def showColor(self):
+        return self.color
+
+    def setCost(self, cost):
+        self.cost = cost
+
+    def showCost(self):
+        return self.cost
+
+    def playGame(self, ):
+        print("I am playing game")
+
+    def calls(self):
+        print(" I am calling")
+
+
+pp = Phone()
+
+pp.setColor("green")
+pp.setCost(1200)
+print(pp.showColor())
+print(pp.showCost())
+---------------------------------------------------------------
+
+CONSTRUCTORS :
+
+class Employee:
+    def __init__(self, name, age, salary):
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+    def employeeDetails(self):
+        print(self.name, self.age, self.salary)
+
+
+emp = Employee("Ali", 25, 1000)
+
+
+emp.employeeDetails()
+----------------------------------------------------------------
+
+INHERITANCE :
+
+class Vehicle:
+    def __init__(self, mileage, cost):
+        self.mileage = mileage
+        self.cost = cost
+
+    def details(self):
+        print("Vehicle")
+        print("Mileage is ", self.mileage)
+        print("Cost is ", self.cost)
+
+
+vv = Vehicle(40, 5000)
+vv.details()
+
+class car(Vehicle):
+    def details(self):
+        print("I am carr")
+
+
+cc = car(100, 200)
+cc.details()
+----------------------------------------------------------------
+
+TYPES OF INHERITANCE :
+
+1) MULTIPLE INHERITANCE 
+
+class Parent1:
+    def string_one(self, str1):
+        self.str1 = str1
+
+    def showStringOne(self):
+        return self.str1
+
+
+class Parent2:
+    def string_two(self, str2):
+        self.str2 = str2
+
+    def showStringTwo(self):
+        return self.str2
+
+
+class Derived(Parent1, Parent2):
+    def string_three(self, str3):
+        self.str3 = str3
+
+    def showStringThree(self):
+        return self.str3
+
+
+d1 = Derived()
+d1.string_one("i am string of parent one")
+d1.string_two("i am string of parent 2")
+d1.string_three("i am string in child")
+
+
+print(d1.showStringOne())
+print(d1.showStringTwo())
+print(d1.showStringThree())
+------------------------------------------------------------
+
+2 : MULTI LEVEL INHERITANCE 
+
+"""
+Multi level inheritance:
+it is just like the grand father then son and then its child
+
+"""
+
+
+class Parent:
+    def assign_name(self, name):
+        self.name = name
+
+    def show_name(self):
+        return self.name
+
+
+class Child(Parent):
+    def assign_age(self, age):
+        self.age = age
+
+    def show_age(self):
+        return self.age
+
+
+class GrandChild(Child):
+    def assign_gender(self, gender):
+        self.gender = gender
+
+    def show_gender(self):
+        return self.gender
+
+
+gc = GrandChild()
+
+
+gc.assign_name("my name is parent")
+gc.assign_age("i am child age")
+gc.assign_gender("i am grand child gender ")
+
+print(gc.show_name())
+print(gc.show_age())
+print(gc.show_gender())
+---------------------------------------------------------
+
+"""
+python libraries is the collection of functions
+that allows us to perform many actions without writing it's code
+
+PANDA :
+with this library we can do data manipulation operations
+
+Numpy :
+we can do numerical computing with numpy
+
+Matplotlib :
+we can do visualization with this like bar graph etc.
+
+
+NUMPY :
+it stands for numerical python
+so in below we make a list then change it to an array using np
+and then store it in another variable n1 and then print
+
+or we can simply write np.array([1,2,3,4]) it will make one dimensional array
+
+Methods in numpy array :
+
+initializing numpy array
+in general cases we need some zeros in array and later we change
+that zeros to some value so we have some method (zero method) which will
+accept 2 parameter i-e no of columns and the no of rows.
+
+---------
+if we want any numbers instead of 0 then we can use (full) method
+just like np.full((3,3),10) so this will an array of 3X3 in which
+all the elements will b 10
+--------
+if we want to give the value in range like we want to give number
+range from 10 to 50 we can use range function
+like np.arange(10, 50) this will add from 10 t0 49 in the array
+
+if we give np.arange(10, 50, 5)
+this will print numbers from 10 to 49 skipping 5 numbers
+----------
+initializing array with random numbers :
+
+if we want to fill our array with random numbers
+starting from specific range and ending to specific range
+then we can do it with random function.
+like n1  = np.random.randint(1,100,5)
+so this will give any 5 number from 1 to 100
+----------------------
+np.shape == so this will show us that how many columns and how many rows are
+present. we can also change it like if we have 3X2 and we write
+nn.shape =  (2,3) so this will change the shape to the 2X3
+now print the shape so
+print(nn.shape)
+---------------------------
+joining 2 numpy arrays we can do it by 3 methods.
+like we can do it by vertically stack, horizontal stack, column stack
+
+vstack :
+if we want our both array to stack vertically on each other than we can use this
+vstack
+print(np.vstack((nn, nnn)))
+while the nn and nnn are 2 different arrays
+
+hstack:
+if we want to both array to be stack horizontally after each other
+than we can use this hstack
+print(np.hstack((nn, nnn)))
+
+columnstack :
+if we want to both array to be stack column wise than we can use this
+print(nn.column_stack((nn, nnn)))
+-------------------------------------
+INTERSECTION AND DIFFERENCE :
+
+INTERSECTION :
+np.intersect1d(n1, n2) so this will find the intersected values
+between the array n1 and n2
+
+DIFFERENCE :
+np.setdiff1d(n1, n2) so this will print all the element which are
+not common in both of the arrays. which are different
+---------------------------------------------
+ADDING VALUES OF 2 NUMPY ARRAYS :
+
+print(np.sum([nn, nnn)]))
+so this will add all the element of the array nn and the array nnn
+
+if we want to add only column elements then we can use
+print(np.sum([nn, nnn], axis = 0))
+so now this will add all the elements only of the columns
+
+same is the case with rows if we only put axis = 1 then it
+would add the elements of rows.
+----------------------------------------
+SAVING AND LOAD OUR NUMPY ARRAY :
+nn = np.array([1,3,4,5,8])
+np.save('my_array', nn) so this take 2 arguments first is the name of the
+file that we will give to the array and the 2nd is the array that
+we are going to save.
+
+In order to reload that our saved array we can use
+n2 = np.load('my_array.npy')
+we must give the .npy extention
+
+"""
+import numpy as np
+
+
+# l1 = [1, 2, 3, 4]
+# n1 = np.array(l1)
+# print(n1)
+# print(type(n1))
+# ------------------
+
+# 2 dimensional array
+
+#
+# n2 = np.array([[1, 2, 3, 4], [4, 3, 2, 1]])
+# print(n2)
+# ----------------------------------------
+
+# n3 = np.zeros((2, 2))
+# print(n3)
+# print(type(n3))
+# ----------------------------------------
+
+# n4 = np.full((3, 3), 5)
+# print(n4)
+# ----------------------------------------
+
+# n5 = np.arange(50, 101)
+# print(n5)
+# ----------------------------------------
+
+# n6 = np.arange(50, 501, 10)
+# print(n6)
+# ----------------------------------------
+
+# n7 = np.random.randint(1, 200, 10)
+# print(n7)
+# ----------------------------------------
+
+# nn = np.array([[2, 4, 6, 8, 10], [1, 3, 5, 7, 9]])
+# print(nn.shape)
+# ----------------------------------------
+
+# nn.shape = (5, 2)
+# print(nn.shape)
+# ----------------------------------------
+
+# nn = np.array([1, 2, 3, 4])
+# nnn = np.array([4, 5, 6, 7])
+# print(np.vstack((nn, nnn)))
+#
+# print(np.hstack((nn, nnn)))
+#
+# print(np.column_stack((nn, nnn)))
+# ----------------------------------------
+
+# intersection
+# nn = np.array([10, 20, 30, 40, 50, 60])
+# nnn = np.array([50, 60, 70, 80, 90])
+#
+# print(np.intersect1d(nn, nnn))
+# # ----------------------------------------
+# # difference
+# print(np.setdiff1d(nn, nnn))
+# print((np.setdiff1d(nnn, nn)))  # this is only revers of above.
+# ----------------------------------------
+
+# nn = np.array([10, 20])
+# nnn = np.array([30, 40])
+# print(np.sum([nn, nnn]))
+#
+# print(np.sum([nn, nnn], axis=0))
+# print(np.sum([nn, nnn], axis= 1))
+# ----------------------------------------
+
+# simple arithmetic functions
+# nn = np.array([10, 20, 30])
+# nn = nn + 1
+# print(nn)
+#
+# nn = nn * 2
+# print(nn)
+#
+# nn = nn/2
+# print(nn)
+# ----------------------------------------
+nn = np.array([22, 14, 19, 27, 78, 129, 10, 66])
+np.save('myArray', nn)
+n2 = np.load('myArray.npy')
+print(n2)
+
+---------------------------------------------------------
+
+PANDAS LIBRARY
+
+"""
+PANDAS :
+it stands for panel data and it is use for data manipulation and data analysis.
+just like numpy give us arrays in which we can perform our tasks here it gives
+different data structures in which we can perform methods and tasks.
+
+just like numpy here it also have single dimensional and multidimensional
+data structures
+single is called series object and multi dimensional is called data-frame
+
+so for single dimensional we use
+pd.Series([2,3,2,4])
+so when we print this we also get the index values with the result
+it is basically in int form so if we want it to be in another form like
+alphabets etc we can also do that by giving extra attribute i-e index
+ss = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'])
+the above series object was created with list we can also do it with
+dictionary like
+pd.Series({'k': 10, 'k2': 20, 'k3': 30, 'k4': 40})
+
+we can also change the indexes with our own will.. like
+ss = pd.Series({'k1':20, 'k2':30, 'k3':40}, index = ['k3', 'k4', 'k5', 'k1'])
+so now this will start from k3 which has value of 30
+
+we can also do indexing like simple lists or strings ex given below.
+and also negative indexing
+
+we can also do a simple arithmetic operations like * + / -
+
+-------------------------------------------------------------------
+multi dimensional data structures  i-e data frames :
+
+in this we have rows and columns
+DATA_FRAME BUILT IN FUNCTIONS:
+
+1 ) HEAD : if we want to show only first 5 record from any data set then we can use this
+2 ) SHAPE : it will give number of rows and column numbers
+3 ) TAIL : if we want last 5 record then we will use this
+4 ) DESCRIBE : this will give a general info that what is here etc.
+
+READ_CSV :
+by using of read_csv we can load data from specific csv file and then save it in
+any other variable or any thing.
+
+.iloc[] : if we want to show some specific then we can specific number of
+rows and columns like
+iris.iloc[0:3, 0:5] so now this will show 3 rows and 5 columns of
+iris data set.
+
+.loc[] : the main difference between the iloc and loc is that when we want some
+specific record if we reload it by indexes then we will use by iloc
+while if we want to record from its name then we can use .loc method.
+like
+print(iris.loc[1:10, ("petal.length", "sepal.length")])
+
+DROPPING (DELETING) :
+if we want to drop the column then we can use iris.drop and then column name
+print(iris.drop('sepal.length', axis=1))
+axis=1 means column
+
+we can also do it with rows
+print(iris.drop([1, 2, 3], axis=0))  # removed first 3 rows.
+--------------------------------------------------
+MORE PANDAS FUNCTIONS
+iris.mean() return mean
+iris.median() return median
+iris.min() will return min value
+iris.max will return max value
+--------------------------------------------------
+APPLY METHOD :
+if we want to apply some specific method or any thing then we can use
+this method like if we want to *5 to all the numbers of data set then we can use
+apply method but for that we have to make the method of that thing and then
+implement in apply method
+print(iris[['sepal.length', 'sepal.width']].apply(multiply))
+
+COUNT VALUES :
+if we want to count some specific thing in the data then we can use this funtion
+with iris here iris is only data name bs
+
+SORTING :
+this will sort the values according to some values like
+print(iris.sort_values(by='sepal.length'))
+this will sort values by sepal.length
+
+"""
+import pandas as pd
+
+# ss = pd.Series([1, 2, 3, 4, 5])
+# print(ss)
+# print(type(ss))
+# ------------------------------------------------------------
+# ss = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'])
+# print(ss)
+
+# -----------------------------------------------------------
+# ss = pd.Series({'a': 10, 'b': 20, 'c': 30, 'd': 40})
+# print(ss)
+# print(type(ss))
+
+# -----------------------------------------------------------
+
+# ss = pd.Series({'k1': 10, 'k2': 20, 'k3': 30, 'k4': 40}, index=['k3', 'k4', 'k5', 'k1', 'k2'])
+# print(ss)
+# -----------------------------------------------------------
+
+
+# ss = pd.Series([5, 10, 15, 20, 25, 30, 35, 40, 45, 50])
+# sss = pd.Series([55, 60, 65, 70, 75, 80, 85, 90, 95, 100])
+# print(ss[5])
+# print(ss[0:4])
+# print(ss[-3:])
+#
+# print(ss + 5)
+# print(ss - 20)
+# add = ss + sss  # adding whole series
+# print(add)
+
+# ------------------------------------------------------------
+
+# ss = pd.DataFrame({'Name': ['ali', 'max', 'gib'], 'marks': [10, 20, 30]})
+# print(ss)
+# print(type(ss))
+
+iris = pd.read_csv('iris.csv')
+
+# print(iris.head())
+# print("-------------------")
+# print(iris.tail())
+#
+# print("-------------------")
+# print(iris.shape)
+# print(iris.describe())
+
+
+# print(iris.head())
+# print("----------------iloc")
+# print(iris.iloc[5:15, 1:4])
+
+# print(iris.loc[1:10, ("petal.length", "sepal.length")])
+
+print(iris.head())
+
+
+# print(iris.drop('sepal.length', axis=1))
+
+# print(iris.drop([1, 2, 3], axis=0))  # removed first 3 rows.
+
+# print(iris.mean())
+# print(iris.min())
+# print(iris.max())
+
+
+# def multiply(s):
+#     return s * 2
+#
+#
+# print(iris[['sepal.length', 'sepal.width']].apply(multiply))
+
+# print(iris['variety'].value_counts())
+print(iris.sort_values(by='sepal.length'))
+
+-------------------------------------------------------------------------------
+
+
+
+MATPLOTLIB :
+
+
+"""
+so with this we can make a lot of plots by matplotlib
+so pyplotlib is the sub module in matplotlib through we can make
+plots
+
+so in order to make graph we have to give x axis and y axis and
+for our convenience we make np arrays and then assign that to x and y
+to plot the graph we use plt.plot()
+and for showing the graph we use plt.show()
+we can change the graph line to dotted, or change the color of the line so this will
+done inside the plot()
+
+we can also label the x,y axis and the whole graph like
+plt.title("First graph")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.plot(x, y, color='red', linestyle=":", linewidth=2)
+------------------------------------------------------
+just like plot we can also make bar graph for which we will
+give 2 values just like the x axis and the y axis
+plt.bar(value1, value2)
+plr.show()
+so this will show bar graph for any of these values
+so this will make bar vertical if we want this bar to be horizontal then
+instead of bar we will use barh then it will be horizontal all other
+properties are same.
+-------------------------------------------------------
+scatter point :
+this will just show the points
+so the main thing is that there will b 2 values given x-axis and y-axis
+so when these 2 points intersect at any point it will show a point.
+so if we do not want dot we can use any other thing instead of
+that dot like we can also use *  and can also increase size like
+plt.scatter(x, b, marker="*", color='green', s=10)
+
+we can also make 2 different graph in one scatter graph.like
+plt.scatter(x, b, marker='*', color='green', s=10)
+plt.scatter(x, c, color='r', s=15)
+
+so when we want a subplot we give
+plt.subplot(1,2,1)
+so this means that we want that sub plot in one row
+and the column should be 2 and the third 1 is giving us info about
+that which scatter plot we are talking about like the first one
+and the 2nd one because we know we have 2 values here.
+---------------------------
+below the hist means that histogram. little bit change from bar chart.
+---------------------------
+BOXPLOT :
+if we want values just to show us that what is 25% and 50% and 75% and 100%
+then we can do use of boxplot
+---------------------------
+PIE CHART :
+in this we can show our data like in a circle graph
+
+"""
+
+import numpy as np
+from matplotlib import pyplot as plt
+import pandas as pd
+
+# x = np.arange(1, 11)
+# print(x)
+# y = 3*x
+# print(y)
+#
+# plt.title("First graph")
+# plt.xlabel("X-axis")
+# plt.ylabel("Y-axis")
+# plt.plot(x, y, color='red', linestyle=":", linewidth=2)
+# plt.show()
+# ------------------------------------------------------------
+
+#
+# x = np.arange(1,11)
+# y1 = x*2
+# y2 = x*3
+# plt.plot(x, y1, color='green', linestyle=':', linewidth=5)
+# plt.plot(x, y2, color='red', linestyle="-", linewidth=4)
+# plt.title('line Plot')
+# plt.xlabel('x-axis')
+# plt.ylabel('y-axis')
+# plt.grid(True)  # it is basically just the behind lines.of the graph
+# plt.show()
+
+# x = np.arange(1, 11)
+# y1 = x*2
+# y2 = x*3
+# plt.subplot(2, 1, 1)
+# plt.plot(x, y1, color='red', linewidth=2)
+#
+# plt.subplot(2, 1, 2)
+# plt.plot(x, y2, color='green', linewidth=3)
+#
+# plt.title("sub plotting")
+# plt.xlabel("X-axis")
+# plt.ylabel("Y-axis")
+# plt.grid(True)
+# plt.show()
+
+# print("-------------------------------------------")
+
+# student = {"bob": 20, "anne": 80, "julie": 77, "max": 100}
+# names = list(student.keys())
+# marks = list(student.values())
+# plt.bar(names, marks)
+# plt.title('marks bar')
+# plt.xlabel('marks obtain')
+# plt.ylabel('total marks')
+# plt.grid(True)
+# plt.show()
+#
+# names = list(student.keys())
+# marks = list(student.values())
+# plt.barh(names, marks, color='green')
+# plt.title('Marks chart')
+# plt.xlabel('Marks')
+# plt.ylabel('Names')
+# plt.grid(True)
+# plt.show()
+
+
+x = [3, 18, 7, 9, 2, 7, 4, 1, 2]
+b = [1, 2, 5, 8, 4, 6, 8, 9, 2]
+c = [3, 2, 7, 1, 1, 4, 6, 5, 3]
+# plt.scatter(x, b)
+# plt.grid(True)
+# plt.show()
+
+# plt.scatter(x, b, marker='*', color='green', s=10)
+# plt.scatter(x, c, color='r', s=15)
+# plt.show()
+
+# plt.subplot(1, 2, 1)    # plt.subplot.(2,1,1) showing 2 rows 1 column
+# plt.scatter(x, b, marker='*', color='g', s=15)
+# plt.subplot(1, 2, 2)    # plt.subplot(2, 1, 2) showing 2 rows 1 column
+# plt.scatter(x, c, marker='.', color='r', s=15)
+# plt.show()
+
+# data = [1, 1, 1, 3, 4, 5, 6, 3, 3, 6, 6, 6, 7, 7, 7, 3, 3, 3, ]
+# plt.hist(data, color='r', bins=3)
+# plt.show()
+
+# iris = pd.read_csv('iris.csv')
+# # print(iris.head())
+#
+# plt.hist(iris['sepal.length'], bins=35, color='g')
+# plt.show()
+
+# one = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# two = [1, 2, 3, 4, 5, 5, 6, 4, 3]
+# three = [6, 7, 8, 9, 2, 3, 4, 5]
+#
+# data = list([one, two, three])
+# plt.boxplot(data)
+# plt.show()
+
+fruits = ['apple', 'mango', 'guava', 'orange', 'banana']
+price = [100, 50, 34, 80, 55]
+plt.pie(price, labels=fruits, autopct='%0.1f%%')
+plt.show()
